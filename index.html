@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delhi Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f6f2;
+      color: #333;
+    }
+
+    header {
+      background: url('coverimg.jpg') no-repeat center center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    header h1 {
+      font-size: 3em;
+      background-color: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #ff5722;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    nav button:hover {
+      background: #e64a19;
+    }
+
+    section {
+      display: none;
+      padding: 30px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #ff5722;
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #eee;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to Delhi Guide</h1>
+  </header>
+
+  <nav>
+    <button onclick="showSection('places')">Places to Visit</button>
+    <button onclick="showSection('food')">Food to Eat</button>
+    <button onclick="showSection('shops')">Shops to Buy From</button>
+  </nav>
+
+  <main>
+    <section id="places" class="active">
+      <h2>Top Places to Visit in Delhi</h2>
+      <ul>
+        <li>Red Fort</li>
+        <li>Qutub Minar</li>
+        <li>India Gate</li>
+        <li>Lotus Temple</li>
+        <li>Humayun's Tomb</li>
+        <li>Akshardham Temple</li>
+      </ul>
+    </section>
+
+    <section id="food">
+      <h2>Must-Try Food in Delhi</h2>
+      <ul>
+        <li>Chole Bhature at Sitaram Diwan Chand</li>
+        <li>Parathas from Paranthe Wali Gali</li>
+        <li>Butter Chicken at Moti Mahal</li>
+        <li>Golgappas at Bengali Market</li>
+        <li>Kebabs from Karim’s</li>
+      </ul>
+    </section>
+
+    <section id="shops">
+      <h2>Best Places to Shop in Delhi</h2>
+      <ul>
+        <li>Sarojini Nagar Market</li>
+        <li>Connaught Place</li>
+        <li>Dilli Haat</li>
+        <li>Chandni Chowk</li>
+        <li>Lajpat Nagar</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; "2025 Delhi Travel Guide" Made with ❤️ for travelers.
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('main section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
